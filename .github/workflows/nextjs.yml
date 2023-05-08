@@ -20,4 +20,4 @@ jobs:
       - name: Yarn ci
         run: yarn install --frozen-lockfile
       - name: Build client
-        run: yarn build-client
+        run: yarn build
