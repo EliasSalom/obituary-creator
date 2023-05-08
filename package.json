@@ -1,5 +1,6 @@
 {
   "name": "obituary-creator",
+  "description": "The leading free and easy-to-use obituary publishing service",
   "version": "0.1.0",
   "private": true,
   "scripts": {
