@@ -1,5 +1,8 @@
 # Free Obituary service
 
+![GitHub branch checks state](https://img.shields.io/github/checks-status/eliassalom/website/main?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/eliassalom/website?style=for-the-badge)
+
 The leading free and easy-to-use obituary publishing service.
 
 check the [website]()
