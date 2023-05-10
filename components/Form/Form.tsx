@@ -1,26 +1,15 @@
 "use client"
 import {useMultistepForm} from "@/hooks/useMultistepForm/useMultistepForm";
-import {FormEvent, useState} from "react";
+import {Dispatch, FormEvent, SetStateAction} from "react";
 import {InformationForm} from "@/components/Form/InformationForm";
+import {DataInitial} from "@/components/Form/types";
 
-export interface DataInitial {
-    name: string
-    age: number
-    location: string
-    time: string
-    religion: string
-    picture: string
+interface Props {
+    data: DataInitial
+    setData: Dispatch<SetStateAction<DataInitial>>
 }
 
-export const Form = () => {
-    const [data, setData] = useState<DataInitial>({
-        name: "",
-        age: 0,
-        location: "",
-        time: "",
-        religion: "",
-        picture: ""
-    })
+export const Form = ({data, setData}: Props) => {
     const setReligion = (religion: string) => {
         setData({...data, religion})
         console.log(data)
