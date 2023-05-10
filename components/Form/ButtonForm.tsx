@@ -1,12 +1,12 @@
-import Image from 'next/image';
-import "./style.css"
 import {ReligionSection} from "@/components/Form/Form.styled";
+import Image from "next/image";
 
 interface Props {
     setReligion: (religion: string) => void
+    updateField: (fields: string) => void
 }
 
-export const ButtonForm = () => {
+export const ReligionForm = () => {
     return (
         <ReligionSection>
             <label className="btn">

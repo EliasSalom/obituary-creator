@@ -46,3 +46,10 @@ export const StartButton = styled.a`
   border: black solid 2px;
   border-radius: 5px;
 `;
+
+export const FormPageSection = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+`;

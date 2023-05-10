@@ -1,6 +1,5 @@
 "use client"
 import {useMultistepForm} from "@/hooks/useMultistepForm/useMultistepForm";
-import {ButtonForm} from "@/components/Form/ButtonForm";
 import {FormEvent, useState} from "react";
 import {InformationForm} from "@/components/Form/InformationForm";
 
@@ -26,6 +25,11 @@ export const Form = () => {
         setData({...data, religion})
         console.log(data)
     }
+    const updateField = (fields: Partial<DataInitial>) => {
+        setData(prev => ({...prev, ...fields}))
+        console.log(data)
+    }
+
     const {
         steps,
         currentStepIndex, step,
@@ -33,12 +37,12 @@ export const Form = () => {
         isLastStep,
         back,
         next
-    } = useMultistepForm([<ButtonForm key={"1"}/>, <InformationForm key={"2"}/>]);
+    } = useMultistepForm([<InformationForm {...data} updateField={updateField} key={"1"}/>]);
 
     const onSubmit = (e: FormEvent) => {
         e.preventDefault()
         if (!isLastStep) return next();
-
+        console.log(data)
     }
     return (
         <form onSubmit={onSubmit}>
