@@ -12,11 +12,11 @@ interface Props {
 export const Form = ({data, setData}: Props) => {
     const setReligion = (religion: string) => {
         setData({...data, religion})
-        console.log(data)
+
     }
     const updateField = (fields: Partial<DataInitial>) => {
         setData(prev => ({...prev, ...fields}))
-        console.log(data)
+
     }
 
     const {
@@ -31,7 +31,6 @@ export const Form = ({data, setData}: Props) => {
     const onSubmit = (e: FormEvent) => {
         e.preventDefault()
         if (!isLastStep) return next();
-        console.log(data)
     }
     return (
         <form onSubmit={onSubmit}>

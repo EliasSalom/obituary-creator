@@ -1,5 +1,6 @@
 import {ReligionSection} from "@/components/Form/Form.styled";
 import Image from "next/image";
+import {useState} from "react";
 
 interface Props {
     setReligion: (religion: string) => void
@@ -7,6 +8,7 @@ interface Props {
 }
 
 export const ReligionForm = () => {
+    const [error, setError] = useState(false)
     return (
         <ReligionSection>
             <label className="btn">
@@ -16,7 +18,8 @@ export const ReligionForm = () => {
             </label>
             <label className="btn">
                 <input type="radio" name="religion" id="option1"/>
-                <Image src={"/../public/icons/002-cross.png"} alt={""} width={50} height={50}/>
+                <Image src={"/../public/icons/002-cross.png"} alt={""} width={50} height={50}
+                       onError={() => setError(true)}/>
                 <p>cross</p>
             </label>
             <label className="btn">

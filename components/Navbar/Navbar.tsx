@@ -1,6 +1,6 @@
 'use client'
 import {usePathname} from "next/navigation";
-import Link from "next/link";
+import Link from 'next-intl/link';
 import {NavBar, NavBarItem} from "@/style/main.styled";
 
 interface Props {
@@ -8,20 +8,20 @@ interface Props {
         name: string;
         href: string;
     }[];
+    lang?: string;
 }
 
-export const Navigation = ({navLinks}: Props) => {
+export const Navigation = ({navLinks, lang}: Props) => {
     const pathname = usePathname();
-
     return (
         <NavBar>
             {navLinks.map((link) => {
                 const isActive = pathname?.startsWith(link.href);
                 return (
                     <Link
-                        className={isActive ? 'text-blue' : 'text-black'}
-                        href={link.href}
+                        href={`${lang}/${link.href}`}
                         key={link.name}
+                        locale={lang}
                         passHref
                         legacyBehavior
                     >
